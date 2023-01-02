@@ -1,0 +1,28 @@
+
+
+@use './variables' as * ;
+
+
+@mixin overtablet {
+    @media (max-width:$overtablet) {
+        @content;
+    }
+}
+
+
+@mixin tablet {
+    @media (max-width:$tablet) {
+        @content;
+    }
+}
+
+
+
+@mixin mobile {
+    @media (max-width:$mobile) {
+        @content;
+    }
+}
+
+
+    

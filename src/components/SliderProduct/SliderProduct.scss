@@ -1,0 +1,19 @@
+
+@use '../../scss/' as *;
+
+.slider-product {
+    max-width: 100%;
+margin: auto 10.4%;
+}
+
+.home-products__title-relate {
+    margin-top: 40px;
+    font-size: 3rem;
+}
+
+@include mobile {
+
+.home-products__title-relate {
+    font-size: 2rem;
+}
+}

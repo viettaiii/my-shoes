@@ -1,0 +1,41 @@
+
+@use '../../scss/' as *;
+
+.manager {
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.manager__sidebar {
+    width: 300px;
+    background-color: #33373a;
+    padding:20px 10px;
+    color:$text-white;
+    height: 100%;
+}
+
+.manager__heading {
+    font-size: 2.6rem;
+    font-weight: bold;
+    text-align: center;
+    color:$text-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.manager__heading-icon {
+    margin-right: 14px;
+    color:$text-white;
+    font-weight: bold; 
+    background-color: $white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.manager__content {
+    flex: 1;
+}

@@ -1,0 +1,113 @@
+@use '../../scss/' as * ;
+
+.sign-up,.login {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    background: repeating-linear-gradient(45deg, black, transparent 100px);
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.form-sign-up {
+    width: 500px;
+    min-height: 400px;
+    background: linear-gradient(45deg, rgb(29 48 205 / 60%), rgb(42 119 65 / 60%),rgb(29 48 205 / 80%),rgb(42 119 65 / 80%));
+    padding: 40px 90px;
+    border-radius: 10px;
+}
+
+.form-sign-up__heading {
+    margin-bottom: 16px;
+    font-size: 3rem;
+    font-weight: bold;
+    color:$text-white;
+    text-align: center;
+    text-shadow: 1px 10px 8px black
+}
+.form-sign-up .form-wrapper {
+    margin-bottom: 15px;    
+    height: 74px;   
+}
+.form-sign-up .form-label {
+    margin-bottom: 10px;
+    color: #000;
+    font-size: 1.7rem;
+    display: block;
+    font-weight: 200;
+}
+
+.form-sign-up .form-group {
+    display: flex;
+    align-items: center;
+    background-color: $white;
+    padding: 0px 10px;
+    border-radius: 10px;
+}
+
+.form-sign-up .form-group:first-child {
+    margin-bottom: 20px;
+}
+
+ .form-message {
+    margin: 7px 0px 15px 5px;
+    display: none;
+    font-size: 1.4rem;
+    color: red; 
+    text-shadow: 1px 2px 1px black; 
+}
+
+.invalid .form-message{
+    display: block;
+}
+
+.form-sign-up .form-control {
+    flex: 1;
+}
+
+.form-sign-up .btn-sign-up {
+    cursor: pointer;    
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    padding: 5px 20px;
+    border-radius: 30px;
+    font-size: 2.2rem;
+    color:$text-white;
+    font-weight: bold;
+    text-align: center;
+    outline: none;
+    border: none;
+    margin-top: 15px;
+    display: flex;
+    border: 1px solid gray;
+    background: linear-gradient(45deg, rgb(157 36 125 / 73%), rgba(42, 119, 65, 0.6), rgb(81 68 34 / 80%), rgba(42, 119, 65, 0.8));
+}
+
+.form-sign-up .next-to-login  {
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+    display: block;
+    color:$text-white;
+    & a {
+        color:blueviolet;
+        font-weight: bold;
+        font-size: 1.7rem;
+    }
+}
+
+.form-sign-up__icon {
+    font-size: 3.1rem;
+    color:rgba(12, 34, 234, 0.6);
+}
+
+
+@include mobile {
+    .form-sign-up {
+        padding: 40px 14px;
+    }
+}

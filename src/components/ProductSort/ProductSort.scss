@@ -1,0 +1,142 @@
+@use '../../scss/' as *;
+
+.product-sorts {
+    height: 106px;
+    padding:0px 5%;
+    margin-top: 2px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 60px;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 1px 0px rgb(0 0 0 / 50%);
+}
+
+.product-sort {
+    padding: 14px 0px;
+    width: 100%;
+    z-index: 2;
+    position: relative;
+}
+
+.product-sort__heading {
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+    font-weight: 200;
+}
+
+.product-sort__selection {
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 15px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.product-sort__selection.disabled  {
+    opacity: 0.4;
+    cursor: default;
+}
+
+.product-sort__option.disabled {
+    display: none;
+}
+
+.product-sort__icon-down {
+    float: right;
+}
+
+.product-sort__search {
+    margin: 30px 0px;
+    padding: 0px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    background-color: $primary;
+    font-size: 2rem;
+    font-weight: bold;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 40px;
+    transition:all 0.4s ease-in-out;
+    cursor: pointer;
+    &:hover {
+        color:$white;
+        background-color: $black;
+    }
+}
+
+.product-sort__search.disabled {
+    opacity: 0.4;
+    cursor: default;
+
+    &:hover {
+        background-color: $primary;
+        color: black;
+        
+    }
+}
+
+.product-sort__option {
+    list-style: none;
+    width: 100%;
+    border-left:1px solid gray ;
+    border-right:1px solid gray ;
+    border-bottom:1px solid gray ;
+    max-height: 150px;
+    border-radius: 0px 0px 10px 10px;
+    overflow-y: auto;
+    display: block;
+    animation: fadeHide 0.4s ease-in-out forwards;
+}
+
+.product-sort__option.show {
+    animation: fadeShow 0.4s ease-in-out forwards;
+    display: block;
+}
+
+@keyframes fadeShow {
+    0% {
+        height: 0;
+        opacity: 0;
+    }100% {
+        height: 150px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeHide {
+    0% {
+        height: 150px;
+    }100% {
+        height: 0px;
+    }
+}
+
+.product-sort__option__item {
+    width: 100%;
+    background-color: $white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 14px 15px;
+    font-size: 2rem;
+    color:$black;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    font-weight: bold;
+    &:hover {
+        background-color: #5987fb;
+        color:$white;
+    }
+    
+}
+
+@include tablet {
+    .product-sorts {
+        display: none;
+    }
+}

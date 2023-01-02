@@ -1,0 +1,136 @@
+@use '../../scss/' as * ;
+
+.list-products__new {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    column-gap: 20px;
+    row-gap: 30px;
+}
+
+// product
+
+.product {
+    height: 370px ;
+    max-width: 100%;
+    transition: border .4s ease-in-out;
+    border: 1px solid transparent;
+    cursor: pointer;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    display: block;
+    &:hover {
+        border:1px solid gray;
+    }
+}
+
+.product__image {
+    width: 100%;
+    height: 256px;
+    overflow: hidden;
+    transform: translateY(0) scale(1);
+    transition: transform 0.4s ease-in-out;
+    & img {
+        height: 256px;
+        object-fit: cover;
+        &:hover {
+            transform: translateY(-30px) scale(1.2);
+        }
+    }
+}
+
+.product__name,.product__stars,
+.product__price {
+    padding: 0px 14px;
+}
+
+.product__stars {
+    margin:2px 0px;
+    transition: color 0.4 ease-in-out;
+}
+
+.product__name {
+    height: 40px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+.product__name:hover {
+    color:$primary;
+}
+
+.product__stars {
+    color:#b0b017;
+}
+
+.product__price  {
+    font-size: 1.8rem;
+    font-weight: 500;
+
+}
+
+.product__price__old {
+    padding: 0px 14px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 2px;
+    opacity: 0.6;
+    text-decoration:line-through;
+}
+
+.product__new {
+    position: absolute;
+    border-radius: 0px 0px 20px 0px;
+    top:0px;
+    left: 0px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+    background-color: $primary;
+    padding: 4px 5px;
+    width: 75px;
+    text-align: center;
+    color: $text-white;
+    height: 30px;
+    background-color: #ff00003b;
+}
+
+.product__hot {
+    background-color: orange;
+    right: 0px;
+}
+
+.product__discount {
+    position: absolute;
+    top:0px;
+    text-align: center;
+    left: 0px;
+    width: 75px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+    background-color: red;
+    padding: 4px 10px;
+    color: $text-white;
+}
+
+
+
+@include tablet {
+    .list-products__new {
+        grid-template-columns: repeat(2,1fr);
+    }
+    
+    
+}
+
+@include mobile {
+    .home-products {
+        margin: auto 10px;
+    }
+    .list-products__new {
+        grid-template-columns: repeat(1,1fr);
+    }
+   .product {
+       width: 100%;
+   }
+
+
+}

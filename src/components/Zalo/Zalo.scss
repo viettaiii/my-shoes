@@ -1,0 +1,89 @@
+@use "../../scss/" as *;
+
+.zalo {
+  position: fixed;
+  display: block;
+  z-index: 99;
+  left: 50px;
+  bottom: 40px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: blue;
+  font-size: 3rem;
+  font-weight: bold;
+  color: $text-white;
+
+  animation: fadeZalo 0.6s ease-in-out infinite;
+
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid orange;
+    background-color:  orange;
+    color:$text-black;
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    width: 60px;
+    height: 60px;
+    border: 1px solid blue;
+    border-radius: 50%;
+    animation: fadeZaloAfter 0.8s ease-in-out infinite;
+  }
+
+  &:hover::after {
+    border: 1px solid orange !important;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 90px;
+    height: 90px;
+    border: 2px solid blue;
+    border-radius: 50%;
+    animation: fadeZaloBefore 1s ease-in-out infinite;
+  }
+
+  &:hover::before  {
+    border: 1px solid orange !important;
+  }
+}
+
+@keyframes fadeZalo {
+  0% {
+    transform: rotate(-25deg);
+  }
+
+  100% {
+    transform: rotate(25deg);
+  }
+}
+
+@keyframes fadeZaloAfter {
+  0% {
+    width: 50px;
+    height: 50px;
+  }
+
+  100% {
+    width: 65px;
+    height: 65px;
+  }
+}
+@keyframes fadeZaloBefore {
+  0% {
+    width: 65px;
+    height: 65px;
+  }
+
+  100% {
+    width: 90px;
+    height: 90px;
+  }
+}

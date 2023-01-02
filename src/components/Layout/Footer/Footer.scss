@@ -1,0 +1,269 @@
+@use '../../../scss/' as *;
+
+.footer {
+    max-width: 100%;
+    margin-top: 50px;
+}
+
+.footer__email {
+    height: 120px;
+    background-color: #333;
+    padding: 0px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__email-icon {
+    font-size: 3rem;
+    margin-right: 5px;
+}
+.footer__email-header {
+    color: $text-white;
+    font-size: 2rem;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    flex: 1;
+}
+
+.footer__search {
+    position: relative;
+
+    height: 50px;
+    width: 480px;
+    display: block;
+    background: #686868;
+    display: flex;
+    border-radius: 40px;
+    
+}
+
+.register-email {
+    padding: 5px 20px;
+    height: 100%;
+    outline: none;
+    background: transparent;
+    border: none;
+    flex: 1;
+    color:$text-white;
+    font-size: 2rem;
+    font-weight: 200;
+
+    &::placeholder {
+        color:$text-white;
+    }
+}
+
+.footer__btn-register {
+    width: 148px;
+    border-radius: 50px;    
+    outline: none;
+    border: none;
+    margin: 5px;
+  
+    transition: all 0.4s linear;
+    background-color:$primary;
+    cursor: pointer;
+    color:$white;
+   
+    font-size: 2rem;
+    &:hover {
+        color:$primary;
+        background-color: #333;
+    }
+}
+.footer__voucher {
+    flex: 1;
+  text-align: right;
+
+  & p {
+      color:$text-white;
+      font-size: 1.4rem;
+      & span {
+          color:$primary;
+          font-size: 3rem;
+      }
+  }
+}
+
+.footer__info {
+    text-align: center;
+
+}
+
+.footer__form-message {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    margin-left: 10px;
+    display: none;
+}
+
+.footer__form-message.invalid {
+    color: red;
+    display: block;
+}
+
+.footer__bottom {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 20px 487px;
+    & footer {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    & h2 {
+        margin-bottom: 16px;
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-align: center;
+        color:$black;
+        letter-spacing: 3px;
+        background-color: $primary;
+        padding: 4px 10px;
+        border-radius: 20px;
+    }
+}
+
+.footer__left {
+    width: 120px;
+}
+
+.footer__center__my-name {
+    color:$text-white;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+
+}
+
+.footer__left__avatar {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid gray;
+}
+
+
+
+.footer__center {
+    flex: 1;
+    padding: 0px 20px;
+    & p {
+        color:$text-white;
+        font-size: 1.7rem;
+        font-weight: 200;
+        margin-bottom: 6px;
+    }
+}
+
+.footer__center__purpose {
+    font-size: 1.8rem;
+    color:$text-white;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer__right {
+    display: flex;
+    align-items: center;
+    width: 300px;
+}
+
+.footer__right-icons {
+    width: 30px;
+    margin-right: 10px;
+    background-color: $primary;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & p {
+        margin: 10px;
+    }
+}
+
+.footer__right-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    & p {
+        margin: 10px 0px;
+        color:$text-white;
+        font-size: 1.6rem;
+        font-weight: 300;
+        
+    }
+
+    & a {
+        margin: 10px 0px;
+        color:rgb(118, 118, 205);
+        text-decoration: underline;
+    }
+}
+
+
+
+@include tablet {
+    .footer__email {
+        flex-direction: column;
+        height: 170px;
+    }
+
+    .footer__voucher {
+        margin-top: 10px;
+    }
+
+    .footer__bottom  {
+        padding: 10px 50px;
+    }
+}
+
+
+@include mobile {
+    .footer__search {
+        max-width: 100%;
+    }
+
+    .footer__email {
+        padding: 0 0px;
+    }
+
+    .register-email {
+        width: 200px;
+    }
+
+    .footer__bottom  {
+        text-align: center;
+        padding: 10px 50px;
+
+        & footer {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    
+    }
+    .footer__right {
+        flex-direction: inherit;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer__right-icons {
+        flex-direction: initial;
+        width: 70%;
+        margin-top: 10px;
+        justify-content: space-between;
+    }
+    
+}

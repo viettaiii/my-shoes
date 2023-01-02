@@ -1,0 +1,70 @@
+@use '../../scss/' as * ;
+
+.sidebar {
+    position: absolute;
+    top:0;
+    right: 0;
+    bottom: 0;
+    width: 250px;
+    background-color: white;
+    transform: translateX(500px);
+   
+}
+
+.sidebar.show {
+    transform: translateX(0px);
+    animation: fadeShow .4s linear forwards;
+}
+
+// Header
+.sider__menu {
+    display: block;
+}
+
+
+.sidebar__tablet {
+    background: #ccc;;
+    padding: 8px 0px;
+    margin-bottom: 8px;
+}
+
+.sidebar__tablet-input {
+    width: 150px;
+    font-size: 1.5rem;
+    font-weight: 200;
+    padding: 0px 10px;
+}
+.sidebarmenu {
+    background-color: white;
+    margin-top: 10px;
+}
+.sidebarmenu__link {
+    list-style: none;
+}
+
+.sidebarmenu__item {
+    padding: 14px 5px;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 8  00;
+    border-bottom: 1px solid gray;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: block;
+    &:hover {
+        background: $primary;
+    }
+}
+
+.sidebarmenu__down-icon {
+   float: right;
+}
+@keyframes fadeShow {
+    0% {
+        transform: translateX(500px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
