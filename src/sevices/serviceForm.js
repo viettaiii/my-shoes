@@ -28,7 +28,6 @@ export const  handleSubmit =  async (e) => {
                     return false;
                   }
                   if(res.data.token) {
-                    console.log("dsdas");
                     localStorage.setItem('token', res.data.token);
                     localStorage.setItem('role', res.data.role);
                     return true;

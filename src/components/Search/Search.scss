@@ -4,6 +4,13 @@
     position: relative;
 }
 
+.header__no-sp {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 200;
+}
 .search {
   width: 360px;
   border-radius: 20px;

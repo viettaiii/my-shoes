@@ -12,7 +12,9 @@ import "swiper/css/scrollbar";
 function ProductSmall({products }) {
     const navigate = useNavigate();
   return (
-    <><div className="main-product__right__content main-product__right__content--product">
+    <>
+    {
+       ( <div className="main-product__right__content main-product__right__content--product">
     <Swiper
         direction={"vertical"}
         slidesPerView={"auto"}
@@ -51,7 +53,12 @@ function ProductSmall({products }) {
 
     </Swiper>
 
-  </div></>
+  </div>)
+    }
+   
+  
+  
+  </>
   )
 }
 
