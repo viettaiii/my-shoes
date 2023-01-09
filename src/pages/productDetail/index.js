@@ -10,7 +10,7 @@ import { GiCheckMark } from "react-icons/gi";
 import { TfiHandPointRight } from "react-icons/tfi";
 import { GiRunningShoe } from "react-icons/gi";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import {BiError} from 'react-icons/bi';
 import routesConfig from "../../config/routes";
 import { URL } from "../../urlApi";
 import {
@@ -43,6 +43,8 @@ import { SiZalo } from "react-icons/si";
 import user from '../../user';
 import ModalSingup from "../../components/ModalSingup";
 import useScrollToTop from "../../hooks/useScrollToTop";
+import ModalModification from "../../components/ModalModification";
+import ModalMofificationInfo from "../../components/ModalModification/ModalMofificationInfo";
 function ProductDetail() {
       useScrollToTop();
   const navigate = useNavigate();
@@ -90,7 +92,32 @@ function ProductDetail() {
        }
       }
       )
-      .then((res) => navigate(res.data.redirect))
+      .then((res) => {
+        let message = "";
+        if(res.data?.message === "Create cart successfully") {
+          message = "Thêm sản phẩm thành công";
+        }else{
+          message ="Cập nhật sản phẩm thành công";
+        }
+          const modification = document.querySelector('.modification');
+          const modificationInfo = document.createElement('div');
+          modificationInfo.classList.add('modification__info')
+          modificationInfo.classList.add('success')
+    modificationInfo.innerHTML =
+    `
+    <svg  class="modification__icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z"></path></svg>
+   <span>${message}</span>
+    ` 
+    modificationInfo.style.animation = "showModification 0.5s ease-in-out forwards;"
+      modification.appendChild(modificationInfo);
+          setTimeout(() => {
+            modificationInfo.classList.remove('success');
+            modificationInfo.style.animation = "hideModification 0.5s ease-in-out forwards;"
+          },2000)
+          setTimeout(() => {
+            modificationInfo.remove(modificationInfo);
+          },3000)
+      })
       .catch((err) => console.log("err", err));
       dispatch(getCart());
   };
@@ -317,6 +344,10 @@ function ProductDetail() {
       </div>
       <Zalo />
     {login && <ModalSingup login message="Bạn cần phải đăng nhập!"/>}  
+    <ModalModification>
+                    <ModalMofificationInfo/>
+    </ModalModification>
+    
     </>
   );
 }

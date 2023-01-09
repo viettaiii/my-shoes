@@ -1,0 +1,175 @@
+@use '../../scss/' as * ;
+
+.modification {
+    position: fixed;
+   right: 0;
+   top: 0;
+   display: flex;
+   flex-direction: column;
+   gap:20px;
+   z-index: 9999;
+}
+.modification__info {
+    position: absolute;
+        top:100px;
+        right: 20px;
+        transform: translateX(300px);
+    width: 300px;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    gap:20px;
+    padding: 10px;
+    align-items: center;
+    border-radius: 4px;
+    overflow: hidden;
+    -webkit-box-shadow: -51px 22px 60px -3px rgba(0,0,0,0.53);
+-moz-box-shadow: -51px 22px 60px -3px rgba(0,0,0,0.53);
+box-shadow: -51px 22px 60px -3px rgba(0,0,0,0.53);
+animation: hideModification 0.5s ease-in-out forwards;
+    .span {
+        font-size: 2rem;
+        font-weight: 200;
+    }
+   &::after {
+       position: absolute;
+       content: "";
+       height: 4px;
+       
+       bottom: 0;
+       left: -100%;
+       width: 100%;
+   }
+   &:nth-child(1) {
+       top:100px;
+    transform: translateY(100px);
+    transition: 0.5s;
+   }
+   &:nth-child(2) {
+    
+    top:calc(100px + calc(70px * calc(2 - 1)));
+  transform:calc(100px + calc(70px * calc(2 - 1)));  
+ transition: 0.5s;
+}
+   &:nth-child(3) {
+    
+    top:calc(100px + calc(70px * calc(3 - 1)));
+  transform:calc(100px + calc(70px * calc(3 - 1)));  
+ transition: 0.5s;
+}
+   &:nth-child(4) {
+    
+    top:calc(100px + calc(70px * calc(4 - 1)));
+  transform:calc(100px + calc(70px * calc(4 - 1)));  
+ transition: 0.5s;
+}
+   &:nth-child(5) {
+    
+    top:calc(100px + calc(70px * calc(5 - 1)));
+  transform:calc(100px + calc(70px * calc(5 - 1)));  
+ transition: 0.5s;
+}
+   &:nth-child(6) {
+    
+    top:calc(100px + calc(70px * calc(6 - 1)));
+  transform:calc(100px + calc(70px * calc(6 - 1)));  
+ transition: 0.5s;
+}
+   &:nth-child(7) {
+    
+    top:calc(100px + calc(70px * calc(7 - 1)));
+  transform:calc(100px + calc(70px * calc(7 - 1)));  
+ transition: 0.5s;
+}
+   &:nth-child(8) {
+    
+    top:calc(100px + calc(70px * calc(8 - 1)));
+  transform:calc(100px + calc(70px * calc(8 - 1)));  
+ transition: 0.5s;
+}
+   &:nth-child(9) {
+    
+    top:calc(100px + calc(70px * calc(9 - 1)));
+  transform:calc(100px + calc(70px * calc(9 - 1)));  
+ transition: 0.5s;
+}
+   &:nth-child(10) {
+    
+    top:calc(100px + calc(70px * calc(10 - 1)));
+  transform:calc(100px + calc(70px * calc(10 - 1)));  
+ transition: 0.5s;
+}
+   &:nth-child(11) {
+    
+    top:calc(100px + calc(70px * calc(11 - 1)));
+  transform:calc(100px + calc(70px * calc(11 - 1)));  
+ transition: 0.5s;
+}
+   &:nth-child(12) {
+    
+    top:calc(100px + calc(70px * calc(12 - 1)));
+  transform:calc(100px + calc(70px * calc(12 - 1)));  
+  transition: 0.5s;
+}
+}
+
+@keyframes showModification {
+    50% {
+        opacity: 0.4;
+        transform: translateX(50px);
+    }
+    75% {
+        opacity: 0.8;
+        transform: translateX(-40px);
+    }
+
+    80% {
+        opacity: 0.8;
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes hideModification {
+    50% {
+        opacity: 0.8;
+        transform: translateX(30px);
+    }
+    60% {
+        opacity: 0.7;
+        transform: translateX(-50px);
+    }
+
+    68% { opacity: 0.6;
+        transform: translateX(0px);
+
+    }
+
+    100% {
+        transform: translateX(400px);
+    }
+}
+
+.modification__info.success {
+    background-color: #00800040;
+    color:white;
+   animation: showModification 0.5s ease-in-out forwards;
+    &::after {
+        background-color: currentColor;
+        transition: 2s;
+        left: 0;
+    }
+}
+
+.modification__info.fail {
+    background-color: rgba(255, 0, 0, 0.282);
+    color:yellow;
+    &::after {
+        background-color: currentColor;
+        transition: 2s;
+        left: 0;
+    }
+}
