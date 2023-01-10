@@ -153,7 +153,9 @@ function Header({ onClickShowSidebar }) {
           <AiOutlineMenu />
         </div>
         <div className="header__user" onClick={handleShowMenuUser}>
+
           <img className="header__user-img" src={defaultUser} alt="USER" />
+           
 
           <div className="header__user-menu">
          
@@ -164,7 +166,6 @@ function Header({ onClickShowSidebar }) {
             <Link className="header__user-link"  onClick={handleLogOut}>
              <BiExpandAlt /> <span>Log out</span>
             </Link>
-
         </> : user.TOKEN !== null && user.TOKEN !== undefined && user.TOKEN !== "" && user.ROLE ==='client;'? 
            (
            <>

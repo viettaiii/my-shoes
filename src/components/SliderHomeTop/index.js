@@ -3,7 +3,7 @@
 import React from 'react';
 
 
-import slider1 from '../../assets/slider/1.jpeg';
+import slider1 from '../../assets/slider/3.png';
 import slider2 from '../../assets/slider/2.jpeg';
 import slider3 from '../../assets/slider/3.png';
 import { memo } from 'react';

@@ -36,7 +36,4 @@ export const listMenu = [
       text: "Sale",
       path: routesConfig.sale,
     },
-    { text: "Dây giày", path: routesConfig.dayGiay },
-    { text: "Spa giày", path: routesConfig.spaGiay },
-    { text: "Liên hệ", path: routesConfig.lienHe },
   ];

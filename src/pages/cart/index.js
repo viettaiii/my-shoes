@@ -58,7 +58,7 @@ function Cart() {
   return (
     <>
       <div className="cart">
-        <h3 className="cart__heading">Giỏ hàng</h3>
+       {cart.length <= 0 ? "":  <h3 className="cart__heading">Giỏ hàng</h3>}
         {cart.length <= 0
           ? ""
           : cart.map((item, index) => (
@@ -117,10 +117,13 @@ function Cart() {
             ))}
 
         {cart.length <=0 ? (
-          <h3>
+         <div className="cart__empty">
+         <h3 >Giỏ hàng</h3>
+          <h4>
           Bạn chưa có sản phẩm nào?
           <Link className="cart__to-product" to={routesConfig.product}>   Mua ngay.</Link>
-          </h3>
+          </h4>
+         </div>
         ) :(
           <div className="cart__total">
           <h3>
