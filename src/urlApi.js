@@ -1,2 +1,2 @@
-export const URL = `https://api-shoe1-bthk.vercel.app`;
+export const URL = `https://backend-shoes-reo.herokuapp.com`;
 
